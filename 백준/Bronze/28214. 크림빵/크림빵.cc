@@ -14,21 +14,15 @@ typedef pair<int,int> pii;
 int main() {
     int n, k, p;
     cin >> n >> k >> p;
-    int v[50] = {};
-    for (int i=0; i<n*k; i++) {
-        cin >> v[i];
-    }
-    int cnt = 0; // n 체크
-    int check = 0; // 0이 입력된 개수 체크
-    int sol = 0; // 빵 묶음 몇개 팔 수 있는지
-    for (int i=0; i<n*k; i++) {
-        cnt++;
-        if (v[i] == 0) check++;
-        if (cnt == k) {
-            if (check < p) sol++;
-            cnt = 0;
-            check = 0;
+    int cnt, sol = 0;
+    for (int i=0; i<n; i++) {
+        cnt = 0;
+        for (int j=0; j<k; j++) {
+            int a;
+            cin >> a;
+            if (a == 0) cnt++;
         }
+        if (cnt < p) sol++;
     }
     cout << sol;
 }
