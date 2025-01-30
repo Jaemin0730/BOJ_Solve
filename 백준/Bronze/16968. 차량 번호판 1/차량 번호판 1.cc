@@ -14,20 +14,12 @@ int main() {
     cin >> s;
     for (int i=0; i<s.size(); i++) {
         if (s[i] == 'c') {
-            if (s[i - 1] == 'c') {
-                sol *= 25;
-            }
-            else {
-                sol *= 26;
-            }
+            if (s[i - 1] == 'c') sol *= 25;
+            else sol *= 26;
         }
         else {
-            if (s[i - 1] == 'd') {
-                sol *= 9;
-            }
-            else {
-                sol *= 10;
-            }
+            if (s[i - 1] == 'd') sol *= 9;
+            else sol *= 10;
         }
     }
     cout << sol;
